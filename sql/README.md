@@ -1,10 +1,21 @@
 # Financial Operations Dashboard
 
+A financial operations analytics project using **SQL Server and Power BI** to monitor transaction performance, processing efficiency, SLA compliance, and department workload.
+
+---
+
 ## 1. Project Overview
 
-This project analyzes financial transaction data to monitor operational performance and identify key trends across transaction volume, transaction status, turnaround time (TAT), SLA performance, and departments.
+This project analyzes simulated financial transaction data to evaluate operational performance across:
 
-The project demonstrates the use of **SQL Server and Power BI** to transform raw transaction data into an interactive financial operations dashboard.
+* Transaction volume and status
+* Completed and pending transactions
+* Turnaround Time (TAT)
+* SLA performance
+* Department workload
+* Month-over-month performance
+
+The project demonstrates an end-to-end workflow from **SQL data preparation and analysis to Power BI dashboard development and business insight generation**.
 
 ---
 
@@ -13,11 +24,12 @@ The project demonstrates the use of **SQL Server and Power BI** to transform raw
 The main objectives of this project are to:
 
 * Monitor overall transaction volume and processing status.
-* Compare transaction performance between July and August 2026.
-* Analyze transaction volume by department.
+* Compare operational performance between July and August 2026.
+* Analyze transaction workload across departments.
 * Monitor Average TAT and SLA Rate.
 * Identify pending transactions and potential operational bottlenecks.
-* Provide a dashboard for management-level performance monitoring.
+* Evaluate whether processing performance improved as transaction volume increased.
+* Provide a management-level dashboard for operational performance monitoring.
 
 ---
 
@@ -38,35 +50,49 @@ The dataset contains simulated financial operations transactions with the follow
 | Channel          | Transaction channel                   |
 | Department       | Department responsible for processing |
 
-> **Note:** The dataset is created for portfolio and analytical practice purposes and does not contain real customer information.
+> **Note:** The dataset is simulated for portfolio and analytical practice purposes and does not contain real customer information.
 
 ---
 
 ## 4. Tools & Technologies
 
-* **SQL Server** – Data storage, querying and analysis
-* **SQL** – Data validation, transformation and KPI preparation
-* **Power BI** – Data visualization and dashboard development
-* **DAX** – KPI calculations and time-based analysis
-* **Microsoft Excel** – Supporting data preparation
+* **SQL Server** – Data storage, querying, validation and analysis
+* **SQL** – Data preparation, data validation and KPI analysis
+* **Power BI** – Dashboard development and data visualization
+* **DAX** – KPI calculations and month-based analysis
+* **Microsoft Excel** – Supporting data preparation and validation
 * **Git/GitHub** – Version control and project documentation
 
 ---
 
-## 5. SQL Analysis
+## 5. Data & SQL Analysis
 
-SQL was used to prepare and analyze the transaction data before visualization.
+SQL was used to create the database, define the transaction table, insert transaction data, validate the dataset, and prepare analytical queries.
 
-Key analyses include:
+### Key SQL Analysis
 
 * Transaction volume by month
 * Completed vs. Pending transactions
 * Transaction amount by transaction type
 * Transaction volume by department
 * Average TAT by department
-* SLA performance analysis
+* SLA performance
 * Duplicate Transaction ID validation
 * July vs. August performance comparison
+
+### SQL Workflow
+
+```text
+Raw Transaction Data
+        ↓
+SQL Server Database
+        ↓
+Data Validation
+        ↓
+KPI & Performance Analysis
+        ↓
+Power BI
+```
 
 ---
 
@@ -76,7 +102,7 @@ The Power BI dashboard tracks five main operational KPIs:
 
 | KPI                    | Description                                     |
 | ---------------------- | ----------------------------------------------- |
-| Total Transactions     | Total number of transactions processed          |
+| Total Transactions     | Total number of transactions                    |
 | Completed Transactions | Number of successfully completed transactions   |
 | Pending Transactions   | Number of transactions still pending            |
 | Average TAT            | Average turnaround time in hours                |
@@ -86,7 +112,7 @@ The Power BI dashboard tracks five main operational KPIs:
 
 ## 7. Power BI Dashboard
 
-The dashboard provides an overview of financial operations performance and allows users to analyze transaction trends across different dimensions.
+The dashboard provides an overview of financial operations performance and enables analysis across transaction status, transaction type, department, and monthly performance.
 
 ### Dashboard Components
 
@@ -101,9 +127,9 @@ The dashboard provides an overview of financial operations performance and allow
 
 ### Dashboard Preview
 
-![Financial Operations Dashboard](screenshots/dashboards.png)
+![Financial Operations Dashboard](./screenshots/dashboards.png)
 
-📄 [View Dashboard PDF](reports/Financial_Operations_Dashboard.pdf)
+📄 **[View Dashboard PDF](./reports/Financial_Operations_Dashboard.pdf)**
 
 ---
 
@@ -111,37 +137,59 @@ The dashboard provides an overview of financial operations performance and allow
 
 ### Transaction Volume
 
-August recorded **50 transactions**, representing a **25% increase** from July's 40 transactions. The increase indicates a higher operational workload during August and provides a basis for evaluating whether processing performance was able to keep pace with the additional transaction volume.
+August recorded **50 transactions**, representing a **25% increase** from July's 40 transactions.
+
+The increase indicates a higher operational workload during August and provides a basis for evaluating whether processing performance was able to keep pace with the additional transaction volume.
 
 ### Completion Performance
 
-Completed transactions increased from **32 in July to 43 in August**, representing a **34.4% increase**. The completion rate also improved from **80.0% to 86.0%**, indicating that the operations team was able to process a larger proportion of transactions despite the increase in overall workload.
+Completed transactions increased from **32 in July to 43 in August**, representing a **34.4% increase**.
+
+The completion rate also improved from **80.0% to 86.0%**, indicating that a larger proportion of transactions were successfully completed despite the increase in overall workload.
 
 ### Pending Transactions
 
-Pending transactions decreased from **8 to 7**, a **12.5% reduction**, even though total transaction volume increased by 25%. This suggests improved transaction resolution and processing capacity, with fewer transactions remaining outstanding at the end of the period.
+Pending transactions decreased from **8 to 7**, a **12.5% reduction**, even though total transaction volume increased by 25%.
+
+This suggests improved transaction resolution and processing capacity, with fewer transactions remaining outstanding.
 
 ### SLA Performance
 
-The **SLA Rate improved from 75% in July to 88% in August**, an increase of **13 percentage points**. The improvement indicates stronger adherence to defined service-level targets and suggests that processing efficiency improved alongside the higher transaction volume.
+The **SLA Rate improved from 75% in July to 88% in August**, an increase of **13 percentage points**.
+
+The improvement indicates stronger adherence to service-level targets and suggests that processing efficiency improved alongside the higher transaction volume.
 
 ### Turnaround Time
 
-Average TAT decreased from **3.21 hours in July to 2.43 hours in August**, representing a **24.3% reduction**. The shorter processing time, combined with the higher completion rate and improved SLA performance, indicates an overall improvement in operational efficiency.
+Average TAT decreased from **3.21 hours in July to 2.43 hours in August**, representing a **24.3% reduction**.
+
+The shorter processing time, combined with the higher completion rate and improved SLA performance, indicates an overall improvement in operational efficiency.
 
 ### Department Performance
 
 **Credit Ops** experienced the largest increase in transaction volume, rising from **12 transactions in July to 22 in August**, an **83.3% increase**.
 
-In contrast, **Trade Finance remained stable at 17 transactions**, while **Loan Ops remained unchanged at 11 transactions**.
+In contrast:
 
-This indicates that the majority of the overall increase in transaction volume was driven by Credit Ops, making it the key department contributing to the higher operational workload in August.
+* **Trade Finance:** remained stable at 17 transactions
+* **Loan Ops:** remained stable at 11 transactions
+
+Credit Ops was therefore the main driver of the additional operational workload in August.
 
 ### Overall Insight
 
-Overall, August demonstrated **stronger operational performance despite a higher workload**. Transaction volume increased by **25%**, while completed transactions grew by **34.4%**, pending transactions decreased by **12.5%**, SLA Rate improved by **13 percentage points**, and Average TAT decreased by **24.3%**.
+Overall, August demonstrated **stronger operational performance despite a higher workload**.
 
-The significant increase in Credit Ops volume was the main driver of the additional workload, while the improvement in completion, SLA, and TAT metrics suggests that the operation was able to handle the increased demand more efficiently.
+| Metric                 |     July |   August |  Change |
+| ---------------------- | -------: | -------: | ------: |
+| Total Transactions     |       40 |       50 |  +25.0% |
+| Completed Transactions |       32 |       43 |  +34.4% |
+| Pending Transactions   |        8 |        7 |  -12.5% |
+| Completion Rate        |    80.0% |    86.0% | +6.0 pp |
+| SLA Rate               |      75% |      88% |  +13 pp |
+| Average TAT            | 3.21 hrs | 2.43 hrs |  -24.3% |
+
+The increase in Credit Ops volume was the main driver of the additional workload, while the improvement in completion rate, SLA performance, and TAT indicates that operations were able to handle the increased demand more efficiently.
 
 ---
 
@@ -151,6 +199,8 @@ The significant increase in Credit Ops volume was the main driver of the additio
 financial-operations-dashboard/
 │
 ├── README.md
+│
+├── .gitignore
 │
 ├── screenshots/
 │   └── dashboards.png
@@ -167,8 +217,6 @@ financial-operations-dashboard/
     ├── 03. insert july_data.sql
     ├── 04. insert august_data.sql
     ├── 05. analysis_queries.sql
-    ├── analysis_data.sql
-    ├── draft.sql
     └── README.md
 ```
 
@@ -201,3 +249,18 @@ financial-operations-dashboard/
 * Transaction processing
 * Credit operations
 * Loan operations
+* Operational performance monitoring
+
+---
+
+## 11. Portfolio Highlights
+
+This project demonstrates the ability to:
+
+* Build and manage a SQL Server database.
+* Validate and analyze operational transaction data.
+* Develop business-focused KPIs.
+* Create an interactive Power BI dashboard.
+* Perform month-over-month performance analysis.
+* Translate operational data into actionable business insights.
+* Document and manage an analytics project using Git/GitHub.
