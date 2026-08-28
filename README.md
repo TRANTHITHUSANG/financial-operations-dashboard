@@ -12,12 +12,12 @@ The project demonstrates the use of **SQL Server and Power BI** to transform raw
 
 The main objectives of this project are to:
 
-- Monitor overall transaction volume and processing status.
-- Compare transaction performance between July and August 2026.
-- Analyze transaction volume by department.
-- Monitor Average TAT and SLA Rate.
-- Identify pending transactions and potential operational bottlenecks.
-- Provide a dashboard for management-level performance monitoring.
+* Monitor overall transaction volume and processing status.
+* Compare transaction performance between July and August 2026.
+* Analyze transaction volume by department.
+* Monitor Average TAT and SLA Rate.
+* Identify pending transactions and potential operational bottlenecks.
+* Provide a dashboard for management-level performance monitoring.
 
 ---
 
@@ -25,18 +25,18 @@ The main objectives of this project are to:
 
 The dataset contains simulated financial operations transactions with the following fields:
 
-| Column | Description |
-|---|---|
-| Transaction_ID | Unique transaction identifier |
-| Date | Transaction date |
-| Customer_ID | Customer identifier |
-| Transaction_Type | Type of financial transaction |
-| Amount | Transaction amount |
-| Currency | Transaction currency |
-| Status | Transaction processing status |
-| TAT | Turnaround time in hours |
-| Channel | Transaction channel |
-| Department | Department responsible for processing |
+| Column           | Description                           |
+| ---------------- | ------------------------------------- |
+| Transaction_ID   | Unique transaction identifier         |
+| Date             | Transaction date                      |
+| Customer_ID      | Customer identifier                   |
+| Transaction_Type | Type of financial transaction         |
+| Amount           | Transaction amount                    |
+| Currency         | Transaction currency                  |
+| Status           | Transaction processing status         |
+| TAT              | Turnaround time in hours              |
+| Channel          | Transaction channel                   |
+| Department       | Department responsible for processing |
 
 > **Note:** The dataset is created for portfolio and analytical practice purposes and does not contain real customer information.
 
@@ -44,11 +44,12 @@ The dataset contains simulated financial operations transactions with the follow
 
 ## 4. Tools & Technologies
 
-- **SQL Server** – Data storage, querying and analysis
-- **SQL** – Data validation, transformation and KPI preparation
-- **Power BI** – Data visualization and dashboard development
-- **DAX** – KPI calculations and time-based analysis
-- **Microsoft Excel** – Supporting data preparation
+* **SQL Server** – Data storage, querying and analysis
+* **SQL** – Data validation, transformation and KPI preparation
+* **Power BI** – Data visualization and dashboard development
+* **DAX** – KPI calculations and time-based analysis
+* **Microsoft Excel** – Supporting data preparation
+* **Git/GitHub** – Version control and project documentation
 
 ---
 
@@ -58,14 +59,14 @@ SQL was used to prepare and analyze the transaction data before visualization.
 
 Key analyses include:
 
-- Transaction volume by month
-- Completed vs. Pending transactions
-- Transaction amount by transaction type
-- Transaction volume by department
-- Average TAT by department
-- SLA performance analysis
-- Duplicate Transaction ID validation
-- July vs. August performance comparison
+* Transaction volume by month
+* Completed vs. Pending transactions
+* Transaction amount by transaction type
+* Transaction volume by department
+* Average TAT by department
+* SLA performance analysis
+* Duplicate Transaction ID validation
+* July vs. August performance comparison
 
 ---
 
@@ -73,13 +74,13 @@ Key analyses include:
 
 The Power BI dashboard tracks five main operational KPIs:
 
-| KPI | Description |
-|---|---|
-| Total Transactions | Total number of transactions processed |
-| Completed Transactions | Number of successfully completed transactions |
-| Pending Transactions | Number of transactions still pending |
-| Average TAT | Average turnaround time in hours |
-| SLA Rate | Percentage of transactions processed within SLA |
+| KPI                    | Description                                     |
+| ---------------------- | ----------------------------------------------- |
+| Total Transactions     | Total number of transactions processed          |
+| Completed Transactions | Number of successfully completed transactions   |
+| Pending Transactions   | Number of transactions still pending            |
+| Average TAT            | Average turnaround time in hours                |
+| SLA Rate               | Percentage of transactions processed within SLA |
 
 ---
 
@@ -89,18 +90,18 @@ The dashboard provides an overview of financial operations performance and allow
 
 ### Dashboard Components
 
-- KPI Cards
-- July vs. August comparison
-- Transaction status analysis
-- Transaction volume by department
-- Transaction type analysis
-- Average TAT
-- SLA performance
-- Interactive filters and slicers
+* KPI Cards
+* July vs. August comparison
+* Transaction status analysis
+* Transaction volume by department
+* Transaction type analysis
+* Average TAT
+* SLA performance
+* Interactive filters and slicers
 
 ### Dashboard Preview
 
-![Financial Operations Dashboard](screenshots/dashboard.png)
+![Financial Operations Dashboard](screenshots/dashboards.png)
 
 📄 [View Dashboard PDF](reports/Financial_Operations_Dashboard.pdf)
 
@@ -147,54 +148,56 @@ The significant increase in Credit Ops volume was the main driver of the additio
 ## 9. Project Structure
 
 ```text
-Financial_Operations_Dashboard/
+financial-operations-dashboard/
 │
 ├── README.md
 │
-├── data/
-│   └── transactions.csv
+├── screenshots/
+│   └── dashboards.png
 │
-├── sql/
-│   ├── create_database.sql
-│   ├── create_table.sql
-│   ├── insert.sql
-│   └── analysis.sql
-│
-├── powerbi/
+├── power bi/
 │   └── Financial_Operations_Dashboard.pbix
 │
 ├── reports/
 │   └── Financial_Operations_Dashboard.pdf
 │
-└── screenshots/
-    └── dashboard.png
-   
+└── sql/
+    ├── 01. create_database.sql
+    ├── 02. create_table.sql
+    ├── 03. insert july_data.sql
+    ├── 04. insert august_data.sql
+    ├── 05. analysis_queries.sql
+    ├── analysis_data.sql
+    ├── draft.sql
+    └── README.md
+```
+
 ---
 
 ## 10. Skills Demonstrated
 
 ### Technical Skills
 
-- SQL Server
-- SQL querying & data analysis
-- Data validation & data transformation
-- DAX
-- Power BI
-- Microsoft Excel
-- Git/GitHub
+* SQL Server
+* SQL querying & data analysis
+* Data validation & data transformation
+* DAX
+* Power BI
+* Microsoft Excel
+* Git/GitHub
 
 ### Analytical Skills
 
-- KPI development
-- Month-over-month analysis
-- SLA & TAT analysis
-- Transaction performance analysis
-- Department performance analysis
-- Business insight generation
+* KPI development
+* Month-over-month analysis
+* SLA & TAT analysis
+* Transaction performance analysis
+* Department performance analysis
+* Business insight generation
 
 ### Domain Knowledge
 
-- Financial operations
-- Transaction processing
-- Credit operations
-- Loan operations
+* Financial operations
+* Transaction processing
+* Credit operations
+* Loan operations
